@@ -49,7 +49,7 @@ func (r *oauthProxy) newOAuth2Config(redirectionURL string) *oauth2.Config {
 			TokenURL: r.idp.TokenEndpoint.String(),
 		},
 		RedirectURL: redirectionURL,
-		Scopes:      append(r.config.Scopes, oidc.DefaultScope...),
+		Scopes:      append(r.config.Scopes, "openid"),
 	}
 
 	return conf
